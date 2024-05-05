@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Iris Flower Classification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #ffe6ff;  /* Pale Pink */
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #ff99ff;  /* Light Magenta */
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #666;
+    }
+
+    .main {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .btn {
+      background-color: #ff6699;  /* Hot Pink */
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .btn:hover {
+      background-color: #ff4d4d;  /* Deep Pink */
+    }
+
+    #prediction {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #ffb3ff;  /* Light Pink */
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Identify Your Iris Flower</h1>
+    <p>Use the form below to predict the species of your Iris flower based on its measurements.</p>
+  </header>
+  <main class="main">
+    <form action="{{ url_for('predict') }}" method="post">
+      <div class="form-group">
+        <label for="Sepal_Length">Sepal Length (cm):</label>
+        <input type="text" name="Sepal_Length" id="Sepal_Length" placeholder="Enter Sepal Length" required>
+      </div>
+      <div class="form-group">
+        <label for="Sepal_Width">Sepal Width (cm):</label>
+        <input type="text" name="Sepal_Width" id="Sepal_Width" placeholder="Enter Sepal Width" required>
+      </div>
+      <div class="form-group">
+        <label for="Petal_Length">Petal Length (cm):</label>
+        <input type="text" name="Petal_Length" id="Petal_Length" placeholder="Enter Petal Length" required>
+      </div>
+      <div class="form-group">
+        <label for="Petal_Width">Petal Width (cm):</label>
+        <input type="text" name="Petal_Width" id="Petal_Width" placeholder="Enter Petal Width" required>
+      </div>
+      <button type="submit" class="btn">Predict</button>
+    </form>
+    <br>
+    <p id="prediction">{{ prediction_text }}</p>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2024 Bisma Azeem</p>
+  </footer>
+</body
