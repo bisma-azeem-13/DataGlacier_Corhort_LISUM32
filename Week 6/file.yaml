@@ -1,0 +1,13 @@
+file_type: csv  
+dataset_name: stream_games_reviews  
+file_name: stream_dataset
+table_name: reviews_table
+inbound_delimiter: ","
+outbound_delimiter: "|" 
+skip_leading_rows: 0 
+columns:
+  - app_id 
+  - app_name  
+  - review_text 
+  - review_score 
+  - review_votes
